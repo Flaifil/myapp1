@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello ! Welcome to EJS</h1>
+
+    <%= data %>
+
+    <% data.forEach((form) =>{ %>
+        <h1>
+            Nom :
+            <%= form.nom %>
+        </h1>
+        
+        <h3>
+            Prenom :
+            <%= form.prenom %>
+        </h3>
+        <p>
+            <%= form.email %>
+        </p>
+        <p>
+            <%= form._id %>
+        </p>
+
+        <a href="/contact/<%= form._id %>">
+            Editer la donnée
+        </a>
+        <a href="/contact/delete/<%= form._id %>">Suppression de la donnée</a>
+
+    <% }); %>
+</body>
+</html>
